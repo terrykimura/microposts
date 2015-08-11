@@ -6,8 +6,11 @@
                 <%= @user.name %>
             </h1>
             Located in: <%= @user.location %><br>
-            <%= @user.bio %>
+            <%= link_to "Followers",followers_user_path %><br>
+            <%= link_to "Following",followings_user_path %>
         </section>
+        <section></section>
+        <%= @user.bio %>
     </aside>
     <div class="col-md-8">
         <%= render 'follow_form' if logged_in? %>
@@ -17,5 +20,6 @@
                 <%= render @microposts %>
             </ol>
         <% end %>
+        </div>
     </div>
 </div>
